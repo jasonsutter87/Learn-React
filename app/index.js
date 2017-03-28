@@ -1,13 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+let User = React.createClass({
+	render: function(){
+		return <div>Jason Sutter</div>
+	}
+})
+
 let App = React.createClass({
   render: function() {
-    return <div>
-      <h1>Our first Component1</h1>
-      <h3>Our first Component2</h3>
-      <p>Our first Component3</p>
+    return (
+    <div>
+      <h1>User List:</h1>
+      <User />
     </div>
+    )
   }
 })
 
