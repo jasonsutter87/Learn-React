@@ -2,9 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let User = React.createClass({
-	render: function(){
-		return <div>{this.props.name}: <a href={'http://github.com/' + this.props.github}>Github</a></div>
-	}
+	render: function() {
+      
+      let github = (this.props.github) ? this.renderGithub(this.props.github) : null
+		  return <div>{this.props.name}: { github }</div>
+	},
+
+  renderGithub: function(github){
+    return <a href={'http://github.com/' + github}>Github</a>
+  }
+
+
+
 })
 
 let App = React.createClass({
@@ -14,6 +23,7 @@ let App = React.createClass({
       <h1>User List2:</h1>
       <User name="Jason Sutter" github="jasonsutter87"/>
       <User name="Renan Barbosa" github="RenanBa"/>
+      <User name="Jason Fassler" />
     </div>
     )
   }
