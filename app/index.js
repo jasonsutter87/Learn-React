@@ -9,6 +9,19 @@ let Counter = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    
+    this.setState({
+      count: 5
+    })
+
+    setInterval(() => {
+      this.setState({
+        count: this.state.count + 1
+      })
+    }, 1000)
+  },
+
   render: function(){
     return <div>Count: {this.state.count}</div>
   }
@@ -16,7 +29,7 @@ let Counter = React.createClass({
 
 let App = React.createClass({
   render: function(){
-    return <Counter />
+    return <Counter start={5}/>
   }
 })
 
