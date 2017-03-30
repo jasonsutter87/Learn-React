@@ -34,6 +34,7 @@ let App = React.createClass({
       <h1>User List2:</h1>
       <User name="Jason Sutter" github="jasonsutter87"/>
       <User name="Renan Barbosa" github="RenanBa"/>
+      <User name="Jason Fassler" />
     </div>
     )
   }
