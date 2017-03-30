@@ -2,17 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 let User = React.createClass({
-	render: function() {
-      
-      let github = (this.props.github) ? this.renderGithub(this.props.github) : null
-		  return <div>{this.props.name}: { github }</div>
+	getInitialState: function(){
+    return {
+      active: false
+    }
+  },
+
+  render: function(){
+		let active = this.state.active ? 'Yes' : 'No'
+    return (
+        <div className="user">
+          <div>Name: {this.props.name}</div>
+          <div>Active: {active}</div>
+          <button onClick={this.toggleActive}>Toggle Active</button>
+        </div>
+      )
 	},
 
-  renderGithub: function(github){
-    return <a href={'http://github.com/' + github}>Github</a>
+  toggleActive: function(){
+    this.setState({
+      active: !this.state.active
+    })
   }
-
-
 
 })
 
